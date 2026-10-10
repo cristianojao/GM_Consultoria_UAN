@@ -415,22 +415,22 @@ st.markdown(
 planos = [
     (
         "Mensal",
-        "Acompanhamento contínuo, com atividades e visitas"
+        "Acompanhamento contínuo, com atividades e visitas "
         "definidas conforme o contrato."
     ),
     (
         "Trimestral",
-        "Acompanhamento periódico para avaliar processos e"
+        "Acompanhamento periódico para avaliar processos e "
         "planejar melhorias."
     ),
     (
         "Semestral",
-        "Revisão programada das rotinas, documentos e"
+        "Revisão programada das rotinas, documentos e "
         "necessidades de adequação."
     ),
     (
         "Anual",
-        "Planejamento de ações e acompanhamento conforme"
+        "Planejamento de ações e acompanhamento conforme "
         "o escopo contratado."
     ),
 ]
@@ -508,16 +508,19 @@ st.markdown(
             <strong>(61) 99927-7063</strong>
         </p>
 
-        <p>
-            class="whatsapp"
+        <a
+            class="whatsapp-button"
             href="https://wa.me/5561999277063"
             target="_blank"
             rel="noopener noreferrer"
+        >
             💬 Chamar no WhatsApp
-        </p>
+        </a>
     </div>
     """,
-    unsafe_allow_html=True)
+    unsafe_allow_html=True,
+)
+
 # ==========================================================
 # RODAPÉ
 # ==========================================================
