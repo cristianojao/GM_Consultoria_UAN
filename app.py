@@ -5,7 +5,7 @@ import streamlit as st
 # CONFIGURAÇÃO DA PÁGINA
 # ==========================================================
 st.set_page_config(
-    page_title="Nutricionista RT | Consultoria UAN",
+    page_title="GM Consultoria UAN",
     page_icon="🥗",
     layout="wide",
     initial_sidebar_state="collapsed",
