@@ -154,6 +154,17 @@ for col, plan in zip(plan_cols, ["Mensal", "Trimestral", "Semestral", "Anual"]):
 st  unsafe_allow_html=True
 )
 
+```python
 st.markdown(
-    '<div class="AN • Responsabilidade Técnica • Boas Práticas • de erro completa (linha e coluna),
-- e as primeiras 120 linhas atuais do arquivo (para verificar restos como "<current_tab_state>").
+    """
+    <div class="an-banner">
+        <strong>GM CONSULTORIA ALIMENTAR</strong>
+        <p>
+            Responsabilidade Técnica • Boas Práticas •
+            Consultoria em UAN
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+```
