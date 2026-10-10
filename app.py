@@ -113,7 +113,7 @@ st.set_page_config( page_title="Nutric RT | Consultoria UAN", page_icon="🥗", 
         )
 
 # Audience
-st.markdown('<div="section-title">🍽️ Atendimento para</div>',inhas industriais",
+st.markdown('<div="section-title">🍽️ Atendimento para</div>', "Linhas industriais",
     "Hotéis", "Escolas", "Empresas e instituições",
     "Outcimentos de alimentação"
 ]
