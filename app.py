@@ -1,11 +1,11 @@
-
+```python
 import streamlit as st
 
 # ==========================================================
 # CONFIGURAÇÃO DA PÁGINA
 # ==========================================================
 st.set_page_config(
-    page_title="Nutric RT | Consultoria UAN",
+    page_title="Nutricionista RT | Consultoria UAN",
     page_icon="🥗",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -32,9 +32,10 @@ st.markdown(
         padding-bottom: 3rem;
     }
 
+    /* DESTAQUE PRINCIPAL */
     .hero {
         background: linear-gradient(135deg, #0d6b5b, #168b73);
-        color: white;
+        color: #ffffff;
         padding: 42px 30px;
         border-radius: 20px;
         text-align: center;
@@ -46,38 +47,42 @@ st.markdown(
         font-size: 16px;
         font-weight: 700;
         margin-bottom: 15px;
+        color: #ffffff;
     }
 
     .hero h1 {
-        color: white;
-        font-size: clamp(2rem, 5vw, 3rem);
+        color: #ffffff !important;
+        font-size: 36px;
         margin-bottom: 18px;
     }
 
     .hero p {
-        color: white;
+        color: #ffffff !important;
         font-size: 17px;
         line-height: 1.8;
         max-width: 850px;
         margin: 0 auto;
     }
 
+    /* TÍTULOS DAS SEÇÕES */
     .section-title {
         color: #0d6b5b;
-        font-size: 1.55rem;
+        font-size: 25px;
         font-weight: 800;
         margin-top: 32px;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
     }
 
     .section-subtitle {
         color: #53635e;
-        font-size: 1rem;
+        font-size: 16px;
         line-height: 1.8;
+        margin-bottom: 20px;
     }
 
+    /* CARTÕES DE SERVIÇOS */
     .card {
-        background: white;
+        background: #ffffff;
         border: 1px solid #e0eee8;
         border-radius: 14px;
         padding: 20px;
@@ -85,30 +90,16 @@ st.markdown(
         color: #33423e;
         box-shadow: 0 4px 14px rgba(20, 70, 55, 0.05);
         line-height: 1.7;
+        min-height: 150px;
     }
 
     .card h3 {
         color: #0d6b5b;
         margin-top: 0;
-        font-size: 1.15rem;
+        font-size: 19px;
     }
 
-    .service {
-        padding: 10px 0;
-        color: #33423e;
-        border-bottom: 1px solid #edf3f1;
-    }
-
-    .service:last-child {
-        border-bottom: 0;
-    }
-
-    .check {
-        color: #0d806b;
-        font-weight: 800;
-        margin-right: 7px;
-    }
-
+    /* PÚBLICO ATENDIDO */
     .audience {
         display: block;
         text-align: center;
@@ -121,8 +112,16 @@ st.markdown(
         margin-bottom: 12px;
     }
 
+    /* DOCUMENTAÇÃO */
+    .check {
+        color: #0d806b;
+        font-weight: 800;
+        margin-right: 8px;
+    }
+
+    /* PLANOS */
     .plan {
-        background: white;
+        background: #ffffff;
         border: 1px solid #cfe9df;
         border-radius: 14px;
         padding: 22px 12px;
@@ -132,17 +131,23 @@ st.markdown(
         box-shadow: 0 4px 14px rgba(20, 70, 55, 0.05);
     }
 
+    /* CONTATO */
     .contact {
         background: #f0faf6;
         border: 1px solid #cfe9df;
         padding: 28px 20px;
         border-radius: 16px;
         text-align: center;
-        margin-top: 24px;
+        margin-top: 30px;
     }
 
     .contact h2 {
         color: #0d6b5b;
+    }
+
+    .contact p {
+        color: #33423e;
+        line-height: 1.8;
     }
 
     .whatsapp {
@@ -156,9 +161,10 @@ st.markdown(
         margin-top: 12px;
     }
 
+    /* FAIXA DA EMPRESA */
     .an-banner {
         background: linear-gradient(135deg, #0d6b5b, #168b73);
-        color: white;
+        color: #ffffff;
         padding: 22px;
         border-radius: 14px;
         text-align: center;
@@ -170,17 +176,20 @@ st.markdown(
     }
 
     .an-banner p {
+        color: #ffffff;
         margin: 10px 0 0;
         line-height: 1.8;
     }
 
+    /* RODAPÉ */
     .footer {
         text-align: center;
         color: #53635e;
-        font-size: 0.9rem;
+        font-size: 14px;
         padding-top: 24px;
     }
 
+    /* CELULARES */
     @media (max-width: 768px) {
         .block-container {
             padding-left: 1rem;
@@ -189,6 +198,10 @@ st.markdown(
 
         .hero {
             padding: 30px 18px;
+        }
+
+        .hero h1 {
+            font-size: 29px;
         }
 
         .hero p {
@@ -241,8 +254,8 @@ st.markdown(
         Seu estabelecimento precisa de Responsabilidade Técnica,
         organização, segurança dos alimentos e adequação às
         Boas Práticas? Conheça os serviços de Nutrição em
-        Alimentação Coletiva (UAN) oferecidos pela GM Consultoria
-        Alimentar.
+        Alimentação Coletiva (UAN) oferecidos pela
+        GM Consultoria Alimentar.
     </div>
     """,
     unsafe_allow_html=True,
@@ -406,20 +419,23 @@ for col, plano in zip(plan_cols, planos):
         )
 
 # ==========================================================
-# CONTATO / WHATSAPP
+# CONTATO E WHATSAPP
 # ==========================================================
 st.markdown(
     """
     <div class="contact">
         <h2>Vamos conversar?</h2>
+
         <p>
             Entre em contato para conhecer os serviços
             e solicitar uma proposta de consultoria.
         </p>
+
         <p>
             Consultoria:
             <strong>(61) 99927-7063</strong>
         </p>
+
         <a
             class="whatsapp"
             href="https://wa.me/5561999277063"
@@ -433,12 +449,13 @@ st.markdown(
 )
 
 # ==========================================================
-# IDENTIDADE DA EMPRESA
+# IDENTIDADE DA EMPRESA E RODAPÉ
 # ==========================================================
 st.markdown(
     """
     <div class="an-banner">
         <strong>GM CONSULTORIA ALIMENTAR</strong>
+
         <p>
             Responsabilidade Técnica • Boas Práticas<br>
             Consultoria em UAN
@@ -451,4 +468,4 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
+```
