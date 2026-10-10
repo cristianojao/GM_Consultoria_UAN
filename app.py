@@ -508,17 +508,16 @@ st.markdown(
             <strong>(61) 99927-7063</strong>
         </p>
 
-        <a
+        <p>
             class="whatsapp"
             href="https://wa.me/5561999277063"
             target="_blank"
-            rel="noopener noreferrer">
+            rel="noopener noreferrer"
             💬 Chamar no WhatsApp
-        </a>
+        </p>
     </div>
     """,
-    unsafe_allow_html=True,
-)
+    unsafe_allow_html=True)
 # ==========================================================
 # RODAPÉ
 # ==========================================================
