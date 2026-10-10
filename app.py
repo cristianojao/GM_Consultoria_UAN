@@ -99,7 +99,7 @@ st.markdown(
 st.write(
     "Seu estabelecimento precisa de Responsabilidade Técnica, organização, segurança alimentar "
     "e adequação às Boas Práticas? Ofereço serviços de Nutrição em Alimentação Coletiva (UAN) "
-="section-title">✅ Serviços</div>', unsafe_allow "Adequação às Boas Práticas e exigências sanitárias",
+st.set_page_config( page_title="Nutric RT | Consultoria UAN", page_icon="🥗", layout="wide", initial_sidebar_state="collapsed", )
     "Manual de Boas Práticas",
     "Elaboração e implantação de POPs",
     "Treinamento de manipuladores de alimentos",
