@@ -491,20 +491,34 @@ st.markdown(
 )
 
 # ==========================================================
-# CONTATO
+# CONTATO E WHATSAPP
 # ==========================================================
-st.markdown("""
-<div class="cta">
-    <h2>📲 Fale agora com uma Especialista</h2>
-    <p>Agende uma avaliação do seu estabelecimento.</p>
-    <p><strong>📞 Telefone/WhatsApp: (61) 99927-7063</strong></p>
-    <a class="whatsapp" href="https://wa.me/5561999277063" target="_blank">
-        💬 Chamar no WhatsApp
-    </a>
-</div>
-""", unsafe_allow_html=True
-)
+st.markdown(
+    """
+    <div class="contact">
+        <h2>Vamos conversar?</h2>
 
+        <p>
+            Entre em contato para conhecer os serviços
+            e solicitar uma proposta de consultoria.
+        </p>
+
+        <p>
+            Consultoria:
+            <strong>(61) 99927-7063</strong>
+        </p>
+
+        <a
+            class="whatsapp"
+            href="https://wa.me/5561999277063"
+            target="_blank"
+            rel="noopener noreferrer">
+            💬 Chamar no WhatsApp
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 # ==========================================================
 # RODAPÉ
 # ==========================================================
