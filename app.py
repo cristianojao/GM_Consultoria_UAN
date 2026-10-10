@@ -83,13 +83,27 @@ st.markdown("""
     }
 </style>
 st unsafe_allow_html=True# Hero
-st.markdown("""
-<div class="hero">
-    <div class="hero-kicker">'🥗' Nutrição em Alimentação Coletiva</div>
-   Consultoria UAN para empresas e estabelecimentos de alimentaçãoação às Boas Práticas.
-    </p>
-</div>
-""", unsafe_allow_html=True)
+```python
+st.markdown(
+    """
+    <div class="hero">
+        <div class="hero-kicker">
+            🥗 Nutrição em Alimentação Coletiva
+        </div>
+
+        <h1>Consultoria em UAN</h1>
+
+        <p>
+            Consultoria para empresas e estabelecimentos
+            de alimentação, com foco em qualidade,
+            segurança alimentar e conformidade com
+            as Boas Práticas.
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+```
 
 # Intro
 st.markdown(
