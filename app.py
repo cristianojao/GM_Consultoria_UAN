@@ -82,7 +82,7 @@ st.markdown("""
         }
     }
 </style>
-""", unsafe_allow_html=True# Hero
+st unsafe_allow_html=True# Hero
 st.markdown("""
 <div class="hero">
     <div class="hero-kicker">🥗 Nutrição em Alimentação Coletiva</div>
