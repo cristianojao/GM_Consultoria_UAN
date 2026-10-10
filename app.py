@@ -428,8 +428,8 @@ planos = [
     ),
     (
         "Trimestral",
-        "Acompanhamento periódico para avaliar processos e
-        planejar melhorias."
+        "Acompanhamento periódico para avaliar processos e"
+        "planejar melhorias."
     ),
     (
         "Semestral",
