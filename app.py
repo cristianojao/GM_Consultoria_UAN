@@ -63,7 +63,7 @@ st.markdown("""
  empresas e estabelecimentos de alimentação.</strong><br>
 # Intro
 st.markdown('<div class="section-title">🏢 Consult Alimentação</div>', unsafe_allow_html=True)
-st? Ofereço serviços de Nutrição em Alimentação Coletiva (UAN) "
+st. Ofereço serviços de Nutrição em Alimentação Coletiva (UAN) "
    _uan/app.py
 )
 
