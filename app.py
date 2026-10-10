@@ -423,8 +423,8 @@ st.markdown(
 planos = [
     (
         "Mensal",
-        "Acompanhamento contínuo, com atividades e visitas
-        definidas conforme o contrato."
+        "Acompanhamento contínuo, com atividades e visitas"
+        "definidas conforme o contrato."
     ),
     (
         "Trimestral",
@@ -433,13 +433,13 @@ planos = [
     ),
     (
         "Semestral",
-        "Revisão programada das rotinas, documentos e
-        necessidades de adequação."
+        "Revisão programada das rotinas, documentos e"
+        "necessidades de adequação."
     ),
     (
         "Anual",
-        "Planejamento de ações e acompanhamento conforme
-        o escopo contratado."
+        "Planejamento de ações e acompanhamento conforme"
+        "o escopo contratado."
     ),
 ]
 
