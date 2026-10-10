@@ -93,11 +93,7 @@ st.markdown(
         box-shadow: 0 5px 18px rgba(13, 107, 91, 0.06);
     }
 
-    .service-card h3 {
-        color: #0d6b5b;
-        font-size: 20px;
-        margin-bottom: 12px;
-    }
+    
 
     .service-card p {
         color: #53635e;
