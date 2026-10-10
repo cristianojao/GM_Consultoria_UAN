@@ -148,7 +148,7 @@ for col, plan in zip(plan_cols, ["Mensal", "Trimestral", "Semestral", "Anual"]):
        href="https://wa.me/5561999277063"
        target="_blank"
        rel="noopener noreferrer">
-        💬 Chamar no WhatsApp
+        "💬 Chamar no WhatsApp"
     </a>
 </div>
 """, unsafe_allow_html=True)
