@@ -1,6 +1,5 @@
 
 import streamlit as st
-
 # ==========================================================
 # CONFIGURAÇÃO DA PÁGINA
 # ==========================================================
@@ -10,7 +9,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
 )
-
 # ==========================================================
 # CSS - IDENTIDADE VISUAL
 # ==========================================================
@@ -224,9 +222,7 @@ st.markdown(
 
     </style>
     """,
-    unsafe_allow_html=True,
-)
-
+    unsafe_allow_html=True)
 # ==========================================================
 # CABEÇALHO PRINCIPAL
 # ==========================================================
@@ -240,14 +236,12 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
-
 # ==========================================================
 # APRESENTAÇÃO
 # ==========================================================
 st.markdown(
     '<div class="section-title">🥗 Consultoria especializada</div>',
-    unsafe_allow_html=True,
-)
+    unsafe_allow_html=True)
 
 st.markdown(
     """
@@ -258,16 +252,13 @@ st.markdown(
         qualidade e na adoção de boas práticas de manipulação.
     </div>
     """,
-    unsafe_allow_html=True,
-)
-
+    unsafe_allow_html=True)
 # ==========================================================
 # SERVIÇOS
 # ==========================================================
 st.markdown(
     '<div class="section-title">Nossos serviços</div>',
-    unsafe_allow_html=True,
-)
+    unsafe_allow_html=True)
 
 servicos = [
     (
@@ -304,7 +295,6 @@ servicos = [
         "e à melhoria da qualidade na produção de alimentos."
     ),
 ]
-
 service_cols = st.columns(3, gap="medium")
 
 for i, (titulo, descricao) in enumerate(servicos):
@@ -316,16 +306,13 @@ for i, (titulo, descricao) in enumerate(servicos):
                 <p>{descricao}</p>
             </div>
             """,
-            unsafe_allow_html=True,
-        )
-
+            unsafe_allow_html=True)
 # ==========================================================
 # PÚBLICO ATENDIDO
 # ==========================================================
 st.markdown(
     '<div class="section-title">Para quem trabalhamos?</div>',
-    unsafe_allow_html=True,
-)
+    unsafe_allow_html=True)
 
 st.markdown(
     """
@@ -334,8 +321,7 @@ st.markdown(
         melhorar seus processos e fortalecer a segurança dos alimentos.
     </div>
     """,
-    unsafe_allow_html=True,
-)
+    unsafe_allow_html=True)
 
 audiencias = [
     "🍞 Padarias",
@@ -345,16 +331,13 @@ audiencias = [
     "🏨 Hotéis",
     "🏫 Escolas e instituições",
 ]
-
 audience_cols = st.columns(3, gap="medium")
 
 for i, publico in enumerate(audiencias):
     with audience_cols[i % 3]:
         st.markdown(
             f'<div class="audience">{publico}</div>',
-            unsafe_allow_html=True,
-        )
-
+            unsafe_allow_html=True)
 # ==========================================================
 # DOCUMENTAÇÃO E ADEQUAÇÃO
 # ==========================================================
@@ -371,8 +354,7 @@ st.markdown(
         do estabelecimento e as normas sanitárias aplicáveis.
     </div>
     """,
-    unsafe_allow_html=True,
-)
+    unsafe_allow_html=True)
 
 documentos = [
     "Manual de Boas Práticas",
@@ -382,7 +364,6 @@ documentos = [
     "Treinamento e orientação dos manipuladores",
     "Verificação das rotinas de higiene e manipulação",
 ]
-
 doc_cols = st.columns(2, gap="medium")
 
 for i, documento in enumerate(documentos):
@@ -393,16 +374,13 @@ for i, documento in enumerate(documentos):
                 <span class="check">✓</span>{documento}
             </div>
             """,
-            unsafe_allow_html=True,
-        )
-
+            unsafe_allow_html=True)
 # ==========================================================
 # PLANOS DE ACOMPANHAMENTO
 # ==========================================================
 st.markdown(
     '<div class="section-title">📅 Planos de acompanhamento</div>',
-    unsafe_allow_html=True,
-)
+    unsafe_allow_html=True)
 
 st.markdown(
     """
@@ -412,8 +390,7 @@ st.markdown(
         definidos na proposta comercial.
     </div>
     """,
-    unsafe_allow_html=True,
-)
+    unsafe_allow_html=True)
 
 planos = [
     (
@@ -437,7 +414,6 @@ planos = [
         "o escopo contratado."
     ),
 ]
-
 plan_cols = st.columns(4, gap="medium")
 
 for col, (periodo, descricao) in zip(plan_cols, planos):
@@ -449,16 +425,13 @@ for col, (periodo, descricao) in zip(plan_cols, planos):
                 <p>{descricao}</p>
             </div>
             """,
-            unsafe_allow_html=True,
-        )
-
+            unsafe_allow_html=True)
 # ==========================================================
 # DIFERENCIAIS
 # ==========================================================
 st.markdown(
     '<div class="section-title">Nossos diferenciais</div>',
-    unsafe_allow_html=True,
-)
+    unsafe_allow_html=True)
 
 diferenciais = [
     "Atendimento conforme as necessidades do estabelecimento",
@@ -466,7 +439,6 @@ diferenciais = [
     "Organização de documentos e procedimentos",
     "Apoio à melhoria contínua dos processos",
 ]
-
 for diferencial in diferenciais:
     st.markdown(
         f"""
@@ -474,9 +446,7 @@ for diferencial in diferenciais:
             <span class="check">✓</span>{diferencial}
         </div>
         """,
-        unsafe_allow_html=True,
-    )
-
+        unsafe_allow_html=True)
 # ==========================================================
 # FAIXA INSTITUCIONAL
 # ==========================================================
@@ -490,9 +460,7 @@ st.markdown(
         </p>
     </div>
     """,
-    unsafe_allow_html=True,
-)
-
+    unsafe_allow_html=True)
 # ==========================================================
 # CONTATO E WHATSAPP
 # ==========================================================
@@ -511,8 +479,6 @@ st.markdown("""
     </a>
 </div>
 """, unsafe_allow_html=True)
-
-
 # ==========================================================
 # RODAPÉ
 # ==========================================================
@@ -527,5 +493,4 @@ st.markdown(
         <p>© 2026 — Todos os direitos reservados.</p>
     </div>
     """,
-    unsafe_allow_html=True,
-)
+    unsafe_allow_html=True)
