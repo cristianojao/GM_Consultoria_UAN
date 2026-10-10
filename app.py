@@ -158,40 +158,43 @@ st.markdown(
         line-height: 1.6;
     }
 
-    /* CONTATO */
-    .contact {
-        background: #e8f7f0;
-        border: 1px solid #cfe9df;
-        padding: 30px 22px;
-        border-radius: 16px;
-        text-align: center;
-        margin-top: 25px;
-    }
+    /* CHAMADA PARA CONTATO */
+.cta {
+    background: #e8f7f0;
+    border: 1px solid #cfe9df;
+    padding: 35px 22px;
+    border-radius: 16px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
 
-    .contact h2 {
-        color: #0d6b5b;
-    }
+.cta h2 {
+    color: #0d6b5b;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
 
-    .contact p {
-        color: #33423e;
-        line-height: 1.8;
-    }
+.cta p {
+    color: #33423e;
+    line-height: 1.8;
+    font-size: 16px;
+}
 
-    .whatsapp-button {
-        display: inline-block;
-        background: #25D366;
-        color: #ffffff !important;
-        padding: 13px 24px;
-        border-radius: 9px;
-        text-decoration: none !important;
-        font-weight: 800;
-        margin-top: 12px;
-    }
+.whatsapp {
+    display: inline-block;
+    background: #25D366;
+    color: #ffffff !important;
+    padding: 13px 24px;
+    border-radius: 9px;
+    text-decoration: none !important;
+    font-weight: 800;
+    margin-top: 12px;
+}
 
-    .whatsapp-button:hover {
-        background: #1eaf54;
-    }
-
+.whatsapp:hover {
+    background: #1eaf54;
+}
     /* FAIXA DA EMPRESA */
     .company-band {
         background: linear-gradient(135deg, #0d6b5b, #168b73);
@@ -493,33 +496,22 @@ st.markdown(
 # ==========================================================
 # CONTATO E WHATSAPP
 # ==========================================================
-st.markdown(
-    """
-    <div class="contact">
-        <h2>Vamos conversar?</h2>
+st.markdown("""
+<div class="cta">
+    <h2>📲 Fale agora com uma Especialista</h2>
+    <p>Agende uma avaliação do seu estabelecimento.</p>
+    <p><strong>📞 Telefone/WhatsApp: (61) 99927-7063</strong></p>
+    <a
+        class="whatsapp"
+        href="https://wa.me/5561999277063"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        💬 Chamar no WhatsApp
+    </a>
+</div>
+""", unsafe_allow_html=True)
 
-        <p>
-            Entre em contato para conhecer os serviços
-            e solicitar uma proposta de consultoria.
-        </p>
-
-        <p>
-            Consultoria:
-            <strong>(61) 99927-7063</strong>
-        </p>
-
-        <a
-            class="whatsapp-button"
-            href="https://wa.me/5561999277063"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            💬 Chamar no WhatsApp
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
 
 # ==========================================================
 # RODAPÉ
