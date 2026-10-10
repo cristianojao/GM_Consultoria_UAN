@@ -125,7 +125,7 @@ st.markdown(
 # Documentation
 st.markdown('<div class="section📋 Documentação e Adequação</div>', unsafe_allow_html=True)
 down('<div class="section-subtitle'>"Elaboraçãoimentos de higiene e segurança dos alimentos",
-]
+
 
 c1ocs):
     with (c1 if i % 2 == 0 else c2):
