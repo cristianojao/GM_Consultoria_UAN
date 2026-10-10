@@ -143,7 +143,7 @@ for col, plan in zip(plan_cols, ["Mensal", "Trimestral", "Semestral", "Anual"]):
     with col:
         st.markdown(f'<divdiv>', unsafe_allow_html=True)
 
-st.info("Consult) 99927-7063</strong></p>
+"<p>Consultoria: <strong>(61) 99927-7063</strong></p>",
     <a class="whatsapp="noopener noreferrer">
         💬 Chamar no WhatsApp
     </a>
