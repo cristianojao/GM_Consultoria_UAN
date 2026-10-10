@@ -1,8 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Nutric RT | Consultoria UAN",
-    page_icon="    initial_sidebar_state="collapsed",
+    page_title/consultoria_uan/app.py
 )
 
 st.markdown("""
