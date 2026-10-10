@@ -230,7 +230,7 @@ st.markdown(
 st.markdown("""
 <div class="hero">
     <div class="hero-kicker">🥗 Nutrição em Alimentação Coletiva</div>
-    <h1>Nutricionista Responsável Técnica (RT)</h1>
+    <h1>GM CONSULTORIA ALIMENTAR</h1>
     <p>
         <strong>Consultoria UAN para empresas e estabelecimentos de alimentação.</strong><br>
         Responsabilidade Técnica, organização, segurança alimentar e adequação às Boas Práticas.
