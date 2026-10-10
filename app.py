@@ -151,8 +151,7 @@ for col, plan in zip(plan_cols, ["Mensal", "Trimestral", "Semestral", "Anual"]):
         "💬 Chamar no WhatsApp"
     </a>
 </div>
-""", 
-unsafe_allow_html=True
+st  unsafe_allow_html=True
 )
 
 st.markdown(
