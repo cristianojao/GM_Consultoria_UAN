@@ -88,7 +88,7 @@ st.markdown(
     """
     <div class="hero">
         <div class="hero-kicker">
-            🥗 Nutrição em Alimentação Coletiva
+            '🥗' Nutrição em Alimentação Coletiva
         </div>
 
         <h1>Consultoria em UAN</h1>
