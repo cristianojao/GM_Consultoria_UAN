@@ -1,97 +1,92 @@
-# app | Consultoria UAN",
+# app.py
+import streamlit as st
+
+st.set_page_config(
+    page_title="Nutric RT | Consultoria UAN",
     page_icon="🥗",
     layout="wide",
-: linear-gradient(180deg, #f7fffc 0%,ffffff 48%, #f5fbf8 100%);
+    initial_sidebar_state="collapsed",
+)
+
+st.markdown("""
+<style>
+    .stApp {
+        background: linear-gradient(180deg, #f7fffc 0%, #ffffff 48%, #f5fbf8 100%);
     }
 
     .block-container {
-        max-width: 11803rem;
+        max-width: 1180px;
+        padding-top: 2rem;
+        padding-bottom: linear-gradient(135deg, #0d6b        color: white;
+        box-shadow: 0 107, 91, .18);
+        margin-bottom10px;
     }
 
-    .hero {
-        padding: 42px 34px;
-        border-radius: 22px;
-        background: linear-gradient(135deg, #0d6b5b, # 700;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-        opacity: .9;
-        margin-bottom: 10px;
+    .hero h1 {
+        font-size: clamp(2rem, 5vw, 3: white;
     }
 
-    .hero font-size: clamp(2rem, 5vw, 3.5rem);
-        line-height        font-size: 1.12rem;
-               margin: 34px 0 8px;
+    .hero p {
+        font850px;
+        margin-bottom: 0;
+   d6b5b;
+        font-size:  800;
+        margin: 34px 0 8px;
     }
 
-title {
+    .section-subtitle {
         color: #53635e;
         font-size: 1rem;
-        margin-bottom: 20px    .card {
-        background: white;
-        border: 1px solid #dpx;
-        height: 100%;
-        box-shadow: 0 7px 22px rgba(20, 75, 63, .07);
-    }
-
     .card h3 {
-        color: #0d6b font-size: 1.15rem;
+        color: #0d6 margin-top: 0;
+        font-size: 1.15rem;
     }
 
- 0;
+    .service {
+        padding: 10px 0;
         color: #33423e;
- border-bottom: 0;
+        border-bottom: 1px solid #edf3f1;
     }
 
-    .check 5px 5px 0;
-        font-weight: 600        text-align: center;
+    .service:last-child {
+        border-bottom: 0;
+    }
+
+    .check {
+        color: #0d806b;
+        font-weight: 800        margin-right: 7px;
+    }
+
+    .audience {
+        display: inline-block;
+               text-align: center;
         background: #f0faf6;
         border: 1px solid #cfe9df;
         border-radius: 18px;
         padding: 24px 18px;
-        800;
-        color: #0d6b5b;
-        font-size: 1.05rem;
-    }
-
-    .cta {
-        margin-top: 35px;
-        padding: 34px;
-        border-radius: 22px;
-        background: #103f37;
-        color: white;
-        text-align: center;
-    }
-
-    .cta h2 {
-        color: white;
+        font-weight: 800 color: white;
         margin-top: 0;
     }
 
-    .cta p {
-        color: #e3f3ee;
+3ee;
     }
 
     .footer {
-        text-align: center;
-        color: #6b7b76;
-        font-size: .9rem;
+        text-align: .9rem;
         padding-top: 30px;
-    }
-
-    a.whatsapp {
-        display: inlinepx;
-        border-radius: 12px;
-        font700px) {
-        .hero {
-            padding:             padding-left: 1rem;
-            padding-right 1rem;
+;
+        background: #25D366;
+        color .block-container {
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
     }
 </style>
-""", unsafe_allowNutricionista Responsável Técnica (RT)</h1>
-p>
-        <strong>Consultoria UAN para empresas e estabelecimentos de alimentação.</strong><br>
-        Responsabilidade Técnica, organização, segurança alimentar e adequação às Boas Práticas.
+""", unsafe_allow_html=True# Hero
+st.markdown("""
+<div class="hero">
+    <div class="hero-kicker">🥗 Nutrição em Alimentação Coletiva</div>
+   Consultoria UAN para empresas e estabelecimentos de alimentaçãoação às Boas Práticas.
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -103,18 +98,24 @@ st.markdown(
 )
 st.write(
     "Seu estabelecimento precisa de Responsabilidade Técnica, organização, segurança alimentar "
-    "e adequação às Boas Práticas? Ofereço serviços de Nutrição emcimentos de alimentação."
-)
-
-# Services
-st.markdownação às Boas Práticas e exigências sanitáriasElaboração e avaliação de cardápios",
-    "Fichas",
+    "e adequação às Boas Práticas? Ofereço serviços de Nutrição em Alimentação Coletiva (UAN) "
+="section-title">✅ Serviços</div>', unsafe_allow "Adequação às Boas Práticas e exigências sanitárias",
+    "Manual de Boas Práticas",
+    "Elaboração e implantação de POPs",
+    "Treinamento de manipuladores de alimentos",
+    "Elaboração e avaliação de cardápios",
+    "Fichas técnicas de preparação",
     "Controle de desperdícios",
     "Controle de qualidade",
-    "Auditorias e visitas técnicas",
-    "Organização da documentação sanitária",
-    "Acompanhamento ediv class="service"><span class="check">🔹 instituições",
-    "Outros estabelecimentos de alimentação"
+   ):
+    with cols[i % 3]:
+        st            unsafe_allow_html=True,
+        )
+
+# Audience
+st.markdown('<div="section-title">🍽️ Atendimento para</div>',inhas industriais",
+    "Hotéis", "Escolas", "Empresas e instituições",
+    "Outcimentos de alimentação"
 ]
 st.markdown(
     "".join(f'<span class="audience">{x}</span>' for x in audiences),
@@ -122,24 +123,33 @@ st.markdown(
 )
 
 # Documentation
-st.markdown('<div class="section-title">📋 Documentação e Adequação</div>', unsafe_allow_html=True)
-st.markdown('<div class="section-subtitle">Elaboração de:</div>', unsafe_allow_html=True)
-
-docs = [
-    "Manual de Boas Práticas",
-    "Documentação sanitária",
-    "Procedimentos de higiene e segurança",
+st.markdown('<div class="section📋 Documentação e Adequação</div>', unsafe_allow_html=True)
+down('<div class="section-subtitle">Elaboraçãoimentos de higiene e segurança dos alimentos",
 ]
 
-c1, c2 = st.columns(2 in enumerate(docs):
-    with (c1 if>', unsafe_allow_html=True)
+c1ocs):
+    with (c1 if i % 2 == 0 else c2):
+        st.markdown(
+            f'<div class="card"><span class="check">✔</span>{item}</div>',
+            unsafe_allow_html=True,
+        )
+
+# Plans
+st.markdown('<div class="section-title">📆 Planos de Acompanhamento</div>', unsafe_allow_html=True)
 st.write("Atendimento conforme a necessidade do estabelecimento:")
 
-plan_cols = st.columns(4, gap="="cta">
-    <h2>📲 Fale <p>Agende uma avaliação do seu estabelecimento.</p>
-    <p><strong>📞 Telefone/WhatsApp: (https://wa.me/5561999277063">
+plan_cols = st.columns(4, gap="medium")
+for col, plan in zip(plan_cols, ["Mensal", "Trimestral", "Semestral", "Anual"]):
+    with col:
+        st.markdown(f'<divdiv>', unsafe_allow_html=True)
+
+st.info("Consult) 99927-7063</strong></p>
+    <a class="whatsapp="noopener noreferrer">
+        💬 Chamar no WhatsApp
+    </a>
+</div>
 """, unsafe_allow_html=True)
 
 st.markdown(
- • Responsabilidade Técnica • Boas Práticas • Segurança_html=True,
-)
+    '<div class="AN • Responsabilidade Técnica • Boas Práticas • de erro completa (linha e coluna),
+- e as primeiras 120 linhas atuais do arquivo (para verificar restos como "<current_tab_state>").
