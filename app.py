@@ -1,4 +1,3 @@
-```python
 import streamlit as st
 
 st.set_page_config(
@@ -316,4 +315,4 @@ st.markdown("""
     <p>© 2026 — Todos os direitos reservados.</p>
 </div>
 """, unsafe_allow_html=True)
-```
+
