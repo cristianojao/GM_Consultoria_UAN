@@ -85,7 +85,7 @@ st.markdown("""
 st unsafe_allow_html=True# Hero
 st.markdown("""
 <div class="hero">
-    <div class="hero-kicker">🥗 Nutrição em Alimentação Coletiva</div>
+    <div class="hero-kicker">'🥗' Nutrição em Alimentação Coletiva</div>
    Consultoria UAN para empresas e estabelecimentos de alimentaçãoação às Boas Práticas.
     </p>
 </div>
