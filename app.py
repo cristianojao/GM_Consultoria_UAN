@@ -144,7 +144,10 @@ for col, plan in zip(plan_cols, ["Mensal", "Trimestral", "Semestral", "Anual"]):
         st.markdown(f'<divdiv>', unsafe_allow_html=True)
 
 "<p>Consultoria: <strong>(61) 99927-7063</strong></p>",
-    <a class="whatsapp"="noopener noreferrer">
+    <a class="whatsapp"
+       href="https://wa.me/5561999277063"
+       target="_blank"
+       rel="noopener noreferrer">
         💬 Chamar no WhatsApp
     </a>
 </div>
