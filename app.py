@@ -160,7 +160,7 @@ st.markdown(
     <div class="an-banner">
         <strong>GM CONSULTORIA ALIMENTAR</strong>
         <p>
-            Responsabilidade Técnica | Boas Práticas |
+            Responsabilidade Técnica  Boas Práticas 
             Consultoria em UAN
         </p>
     </div>
