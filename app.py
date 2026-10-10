@@ -61,9 +61,10 @@ block-container {
 st.markdown("""
 <div class="hero">
  empresas e estabelecimentos de alimentação.</strong><br>
-('<div class="section-title">🏢 Consultoria paraação</div>', unsafe_allow_html=True)
-st "Seu estabelecimento precisa de Responsabilidade Técnica, organização, segurança alimentar "
-    "e adequação às Boas Práticas? Ofereço serviços de Nutrição em Alimentação Coletiva (U "para empresas e estabelecimentos de alimentação."
+# Intro
+st.markdown('<div class="section-title">🏢 Consult Alimentação</div>', unsafe_allow_html=True)
+st? Ofereço serviços de Nutrição em Alimentação Coletiva (UAN) "
+   _uan/app.py
 )
 
 # Services
