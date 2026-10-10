@@ -164,7 +164,6 @@ st.markdown(
             Consultoria em UAN
         </p>
     </div>
-    """,
-    unsafe_allow_html=True
+    st  unsafe_allow_html=True
 )
 ```
