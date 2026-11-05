@@ -4,7 +4,7 @@ import streamlit as st
 # GM CONSULTORIA ALIMENTAR - SITE INSTITUCIONAL
 # Execute com: streamlit run app.py
 # ============================================================
-<h1></h1>
+
 
 st.set_page_config(
     page_title="GM Consultoria Alimentar",
