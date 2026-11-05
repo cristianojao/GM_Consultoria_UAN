@@ -311,7 +311,8 @@ st.markdown(
       <div class="eyebrow">Consultoria • Assessoria • Responsabilidade técnica</div>
       <div class="hero-content">
         <div>
-          <h1>Seu negócio mais seguro. Sua gestão mais eficiente.</h1>
+          <h1>Seu negócio mais seguro.</h1>
+          <h1>Sua gestão mais eficiente.</h1>
           <p>
             Consultoria especializada em segurança dos alimentos para
             restaurantes, lanchonetes, padarias e empresas do setor alimentício.
