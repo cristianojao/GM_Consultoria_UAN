@@ -44,7 +44,7 @@ st.markdown(
 
       .site-header {
         position: sticky;
-        top: 0;
+        top: 20px;
         z-index: 999;
         display: flex;
         align-items: center;
@@ -87,7 +87,7 @@ st.markdown(
         color: var(--verde);
       }
 
-      section { scroll-margin-top: 105px; }
+      section { scroll-margin-top: 125px; }
       .hero {
         overflow: hidden;
         background: linear-gradient(120deg, #ffffff 0%, #eaf5f0 100%);
@@ -266,7 +266,8 @@ st.markdown(
       @media (max-width: 760px) {
         .block-container { padding: 0.7rem 0.8rem 1.5rem; }
         .site-header {
-          position: relative;
+          position: sticky;
+          top: 12px;
           align-items: flex-start;
           flex-direction: column;
           padding: 14px;
@@ -476,7 +477,7 @@ with st.form("form_orcamento", clear_on_submit=False):
         placeholder="Descreva brevemente sua necessidade...",
         height=110,
     )
-    enviar = st.form_submit_button("Enviar solicitação no WhatsApp", use_container_width=True)
+    enviar = st.form_submit_button("Preparar solicitação no WhatsApp", use_container_width=True)
 
 if enviar:
     if not nome.strip() or not telefone.strip() or not segmento:
