@@ -1,465 +1,350 @@
 import streamlit as st
-# ==========================================================
-# CONFIGURAÇÃO DA PÁGINA
-# ==========================================================
-st.set_page_config(
-    page_title="GM Consultoria UAN",
-    page_icon="🥗",
-    layout="wide",
-    initial_sidebar_state="collapsed")
-# ==========================================================
-# CSS - IDENTIDADE VISUAL
-# ==========================================================
+# CONFIGURAÇÃO BÁSICA
+st.set_page_configescuro: #003f32;
+      --verde-claro: #e9f7ed position: sticky;
+      top: 0;
+      20;
+      box-shadow: 0 2px 12px #0001;
+    }
+
+    .logo {
+      900;
+      color: var(--verde);
+    font-size: 10px;
+      font-weight: 500;
+      margin-top: 4px;
+      background: var(--verde-escuro);
+      display: flex;
+      overflow-x: auto;
+      gap      position: sticky;
+      top: 58px;
+      z-index: 19;
+    }
+
+    nav a {
+      color: white      text-decoration: none;
+      font-size:  white-space: nowrap;
+    }
+
+    nav a:hover(--lima);
+    }
+
+    section {
+      padding: 38px hero {
+      background: white;
+      text-align: center;
+      display: block;
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 14px;
+    }
+
+    h1 {
+      color: var(--verde);
+      font-size: clamp(26px, 6vw, 40px);
+    }
+
+    h2 {
+      color: var(--verde);
+      font-size: 25px;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    border-radius: 30px;
+      background: #20bd61;
+      color: white;
+      padding:px 23px;
+      margin-top: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .: auto;
+    }
+
+    .grid {
+      display-template-columns: repeat(auto-fit, minmax(220, 1fr));
+      gap: 16px;
+         padding: 22px;
+      border-radius: 15px;
+      box-shadow: 0 4px 16-top: 8px;
+    }
+
+    .emoji {
+      font-size: 32px;
+    }
+
+ background: var(--verde-claro);
+      padding: 25px;
+      border-radius: 18px;
+    }
+
+    .px;
+      text-align: center;
+    }
+
+    16px;
+      bottom: 20px;
+ none;
+      border-radius: 40px;
+     0003;
+    }
+
+    .status {
+      text      section {
+        padding: 55px 8 """,
+    unsafe_allow_html=True,
+)
+
+# CABEÇALHO E MENU
 st.markdown(
     """
-    <style>
-    .stApp {
-        background: linear-gradient(
-            180deg,
-            #f7fffc 0%,
-            #ffffff 48%,
-            #f5fbf8 100%
-        );
-    }
-    .block-container {
-        max-width: 1180px;
-        padding-top: 2rem;
-        padding-bottom: 3rem;
-    }
+    <header>
+      <divEspecialistas em segurança alimentar</small>
+      </div    </header>
 
-    /* DESTAQUE PRINCIPAL */
-    .hero {
-        background: linear-gradient(135deg, #0d6b5b, #168b73);
-        color: #ffffff;
-        padding: 42px 30px;
-        border-radius: 20px;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(13, 107, 91, 0.18);
-        margin-bottom: 28px;
-    }
-    .hero-kicker {
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        letter-spacing: 1px;
-    }
-    .hero h1 {
-        color: #ffffff !important;
-        font-size: clamp(30px, 5vw, 44px);
-        line-height: 1.2;
-        margin-bottom: 18px;
-    }
-    .hero p {
-        color: #ffffff !important;
-        font-size: 17px;
-        max-width: 850px;
-        margin: 0 auto;
-        line-height: 1.7;
-    }
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#empresa">Quem somos</a>
+      <aservicos">Serviços</a>
+      <a href="#segmentos">Segmentos</a>
+      <a href="#contato">Orçamento</a>
+    </nav>
 
-    /* TÍTULOS DAS SEÇÕES */
-    .section-title {
-        color: #0d6b5b;
-        font-size: 28px;
-        font-weight: 800;
-        text-align: center;
-        margin-top: 35px;
-        margin-bottom: 12px;
-    }
-    .section-subtitle {
-        color: #53635e;
-        font-size: 16px;
-        text-align: center;
-        line-height: 1.7;
-        max-width: 850px;
-        margin: 0 auto 25px auto;
-    }
-
-    /* CARTÕES DE SERVIÇOS */
-    .service-card {
-        background: #ffffff;
-        border: 1px solid #dcefe7;
-        border-radius: 16px;
-        padding: 24px 20px;
-        min-height: 225px;
-        margin-bottom: 18px;
-        box-shadow: 0 5px 18px rgba(13, 107, 91, 0.06);
-    }
-    .service-card p {
-        color: #53635e;
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
-    /* PÚBLICO ATENDIDO */
-    .audience {
-        background: #e8f7f0;
-        border: 1px solid #cfe9df;
-        border-radius: 12px;
-        padding: 20px 10px;
-        text-align: center;
-        color: #0d6b5b;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-
-    /* DOCUMENTAÇÃO */
-    .document-card {
-        background: #ffffff;
-        border: 1px solid #dcefe7;
-        border-radius: 12px;
-        padding: 16px;
-        margin-bottom: 12px;
-        color: #33423e;
-        line-height: 1.5;
-    }
-    .check {
-        color: #0d806b;
-        font-weight: 800;
-        margin-right: 8px;
-    }
-
-    /* PLANOS */
-    .plan {
-        background: #ffffff;
-        border: 1px solid #cfe9df;
-        border-radius: 16px;
-        padding: 28px 12px;
-        text-align: center;
-        box-shadow: 0 5px 18px rgba(13, 107, 91, 0.06);
-        margin-bottom: 16px;
-    }
-    .plan h3 {
-        color: #0d6b5b;
-        font-size: 21px;
-    }
-    .plan p {
-        color: #53635e;
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    /* CHAMADA PARA CONTATO */
-.cta {
-    background: #e8f7f0;
-    border: 1px solid #cfe9df;
-    padding: 35px 22px;
-    border-radius: 16px;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 25px;
-}
-.cta h2 {
-    color: #0d6b5b;
-    font-size: 28px;
-    margin-bottom: 12px;
-}
-.cta p {
-    color: #33423e;
-    line-height: 1.8;
-    font-size: 16px;
-}
-.whatsapp {
-    display: inline-block;
-    background: #25D366;
-    color: #ffffff !important;
-    padding: 13px 24px;
-    border-radius: 9px;
-    text-decoration: none !important;
-    font-weight: 800;
-    margin-top: 12px;
-}
-.whatsapp:hover {
-    background: #1eaf54;
-}
-
-    /* FAIXA DA EMPRESA */
-    .company-band {
-        background: linear-gradient(135deg, #0d6b5b, #168b73);
-        color: #ffffff;
-        padding: 22px;
-        border-radius: 14px;
-        text-align: center;
-        margin-top: 28px;
-    }
-    .company-band h3 {
-        color: #ffffff !important;
-    }
-
-    /* RODAPÉ */
-    .footer {
-        text-align: center;
-        color: #53635e;
-        font-size: 13px;
-        padding-top: 24px;
-    }
-
-    /* AJUSTES DE TEXTO DO STREAMLIT */
-    h2, h3 {
-        color: #0d6b5b;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True)
-# ==========================================================
-# CABEÇALHO PRINCIPAL
-# ==========================================================
-st.markdown("""
-<div class="hero">
-    <div class="hero-kicker">🥗 Nutrição em Alimentação Coletiva</div>
-    <h1>GM CONSULTORIA ALIMENTAR</h1>
-    <p>
-        <strong>Consultoria UAN para empresas e estabelecimentos de alimentação.</strong><br>
-        Responsabilidade Técnica, organização, segurança alimentar e adequação às Boas Práticas.
-    </p>
-</div>
-""", unsafe_allow_html=True)
-# ==========================================================
-# APRESENTAÇÃO
-# ==========================================================
-st.markdown(
-    '<div class="section-title">🥗 Consultoria especializada</div>',
-    unsafe_allow_html=True)
-st.markdown(
-    """
-    <div class="section-subtitle">
-        A GM Consultoria Alimentar oferece suporte técnico para
-        empresas e estabelecimentos do setor de alimentação,
-        auxiliando na organização dos processos, na melhoria da
-        qualidade e na adoção de boas práticas de manipulação.
+    <ativo GM Consultoria Alimentar
     </div>
     """,
-    unsafe_allow_html=True)
-# ==========================================================
-# SERVIÇOS
-# ==========================================================
-st.markdown(
-    '<div class="section-title">Nossos serviços</div>',
-    unsafe_allow_html=True)
-servicos = [
-    (
-        "👩‍⚕️ Responsabilidade Técnica (RT)",
-        "Atuação profissional em responsabilidade técnica, conforme "
-        "as atribuições legais, as exigências aplicáveis e o escopo "
-        "contratado para o estabelecimento."
-    ),
-    (
-        "📋 Manual de Boas Práticas e POPs",
-        "Elaboração, revisão e orientação para implantação de "
-        "documentos e procedimentos de higiene e segurança dos alimentos."
-    ),
-    (
-        "🍽️ Cardápios e Fichas Técnicas",
-        "Elaboração e avaliação de cardápios e fichas técnicas de "
-        "preparação, com atenção à padronização, aos custos e ao "
-        "aproveitamento dos alimentos."
-    ),
-    (
-        "🔍 Auditorias e Visitas Técnicas",
-        "Verificação das rotinas do estabelecimento, identificação "
-        "de oportunidades de melhoria e orientação para adequação "
-        "dos procedimentos."
-    ),
-    (
-        "🧑‍🍳 Treinamento de Manipuladores",
-        "Orientação das equipes sobre higiene pessoal, manipulação "
-        "segura, prevenção de contaminação e boas práticas."
-    ),
-    (
-        "📊 Controle de Qualidade e Desperdício",
-        "Apoio à organização dos processos, ao controle de perdas "
-        "e à melhoria da qualidade na produção de alimentos."
-    ),
-]
-service_cols = st.columns(3, gap="medium")
+    unsafe_allow_html=True,
+)
 
-for i, (titulo, descricao) in enumerate(servicos):
-    with service_cols[i % 3]:
-        st.markdown(
-            f"""
-            <div class="service-card">
-                <h3>{titulo}</h3>
-                <p>{descricao}</p>
-            </div>
-            """,
-            unsafe_allow_html=True)
-# ==========================================================
-# PÚBLICO ATENDIDO
-# ==========================================================
-st.markdown(
-    '<div class="section-title">Para quem trabalhamos?</div>',
-    unsafe_allow_html=True)
+# INÍCIO
 st.markdown(
     """
-    <div class="section-subtitle">
-        Atendimento direcionado a estabelecimentos que desejam
-        melhorar seus processos e fortalecer a segurança dos alimentos.
-    </div>
-    """,
-    unsafe_allow_html=True)
-audiencias = [
-    "🍞 Padarias",
-    "🍔 Lanchonetes",
-    "🍴 Restaurantes",
-    "🏭 Cozinhas industriais",
-    "🏨 Hotéis",
-    "🏫 Escolas e instituições",
-]
-audience_cols = st.columns(3, gap="medium")
+    <section class="hero" id="inicio">
+      <div class="container">
+        <!-- Troque o src abaixo pelo caminho correto da sua imagem -->
+       img class="banner"
+             src="assets/banner-horizontal             alt="GM Consultoria Alimentar">
 
-for i, publico in enumerate(audiencias):
-    with audience_cols[i % 3]:
-        st.markdown(
-            f'<div class="audience">{publico}</div>',
-            unsafe_allow_html=True)
-# ==========================================================
-# DOCUMENTAÇÃO E ADEQUAÇÃO
-# ==========================================================
-st.markdown(
-    '<div class="section-title">📋 Documentação e adequação sanitária</div>',
-    unsafe_allow_html=True)
+        <h1>Seu negócio mais sempre!</h1>
+
+        <p>
+          Consultoria e assessoria especializada em segurança
+          dos alimentos para sua empresa.
+        </p>
+
+        <a class="btn target="_blank">
+           Fale conosco pelo WhatsApp
+        </a>
+      EMPRESA
 st.markdown(
     """
-    <div class="section-subtitle">
-        Apoio à organização documental e aos procedimentos de higiene
-        e segurança dos alimentos, considerando as características
-        do estabelecimento e as normas sanitárias aplicáveis.
-    </div>
-    """,
-    unsafe_allow_html=True)
-documentos = [
-    "Manual de Boas Práticas",
-    "Elaboração e implantação de POPs",
-    "Orientação sobre documentação sanitária",
-    "Orientação para controle de qualidade",
-    "Treinamento e orientação dos manipuladores",
-    "Verificação das rotinas de higiene e manipulação",
-]
-doc_cols = st.columns(2, gap="medium")
+    <section id="empresa">
+      <div class="container">
+        <h2>Quem somos</h2>
 
-for i, documento in enumerate(documentos):
-    with doc_cols[i % 2]:
-        st.markdown(
-            f"""
-            <div class="document-card">
-                <span class="check">✓</span>{documento}
-            </div>
-            """,
-            unsafe_allow_html=True)
-# ==========================================================
-# PLANOS DE ACOMPANHAMENTO
-# ==========================================================
-st.markdown(
-    '<div class="section-title">📅 Planos de acompanhamento</div>',
-    unsafe_allow_html=True)
-st.markdown(
-    """
-    <div class="section-subtitle">
-        O acompanhamento pode ser planejado conforme as necessidades
-        do estabelecimento, a frequência das visitas e os serviços
-        definidos na proposta comercial.
-    </div>
-    """,
-    unsafe_allow_html=True)
+        <!-- Troque o src abaixo pelo caminho correto da sua imagem -->
+        <img
+          src="assets/banner-vertical.jpg"
+Serviços da GM Consultoria Alimentar"
+          style="
+            width:100%;
+            max-width:550px;
+            display:block;
+            margin:20px auto:16px;
+          "
+        >
 
-planos = [
-    (
-        "Mensal",
-        "Acompanhamento contínuo, com atividades e visitas "
-        "definidas conforme o contrato."
-    ),
-    (
-        "Trimestral",
-        "Acompanhamento periódico para avaliar processos e "
-        "planejar melhorias."
-    ),
-    (
-        "Semestral",
-        "Revisão programada das rotinas, documentos e "
-        "necessidades de adequação."
-    ),
-    (
-        "Anual",
-        "Planejamento de ações e acompanhamento conforme "
-        "o escopo contratado."
-    ),
-]
-plan_cols = st.columns(4, gap="medium")
+        <p>
+          A GM Consultoria Alimentar é especializada em
+          consultoria e assessoria para estabelecimentos do
+          setor alimentício.
+        </p>
 
-for col, (periodo, descricao) in zip(plan_cols, planos):
-    with col:
-        st.markdown(
-            f"""
-            <div class="plan">
-                <h3>{periodo}</h3>
-                <p>{descricao}</p>
-            </div>
-            """,
-            unsafe_allow_html=True)
-# ==========================================================
-# DIFERENCIAIS
-# ==========================================================
-st.markdown(
-    '<div class="section-title">Nossos diferenciais</div>',
-    unsafe_allow_html=True)
-diferenciais = [
-    "Atendimento conforme as necessidades do estabelecimento",
-    "Orientação técnica com foco na segurança dos alimentos",
-    "Organização de documentos e procedimentos",
-    "Apoio à melhoria contínua dos processos",
-]
-for diferencial in diferenciais:
-    st.markdown(
-        f"""
-        <div class="document-card">
-            <span class="check">✓</span>{diferencial}
+        <          Nosso trabalho busca garantir segurança dos alimentos,
+          organização, padron dos processos e conformidade
+          com a legislação sanitária aplicável.
+        </p>
+
+        <div class="destaque">
+          <h3>Nosh3>
+          <p>
+            Cuidar da segurança dos alimentos e da conformidade
+            do seu estabelecimento, para que você possa focar
+            no crescimento do seu negócio.
+          </p>
         </div>
-        """,
-        unsafe_allow_html=True)
-# ==========================================================
-# FAIXA INSTITUCIONAL
-# ==========================================================
+      </div>
+    </section>
+    """,
+    unsafe_allow_html=True,
+)
+
+OS
 st.markdown(
     """
-    <div class="company-band">
-        <h3>GM CONSULTORIA ALIMENTAR</h3>
+    <section id="servicos">
+      <div class="container">
+        <h2>Nossos serviços</ <article class="card">
+            <div class="emoji">🛡️</div>
+h3>Segurança dos alimentos e RT</h3>
+            <p técnica e orientação para
+              alimentos seguros e conformidade sanitária.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="emoji">📋</ <h3>MBP, POPs e BPF</h3>
+            <p>
+              Elaboração, implantação e acompanhamento
+              de documentos">
+            <div class="emoji">👩‍🍳</div>
+            <h3              Capacitação da equipe com foco na prática
+              e na segurança dos alimentos.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="emoji">📈</div>
+            <h3>Organização eficiente, segura e produtiva.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="emoji">📑</div>
+            <io na licença sanitária</h3>
+            <ação e suporte durante o processo
+              de regularização sanitária.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="emoji">🔎</div>
+            <h3>Diagnóstico e plano de ação</h3>
+            < melhoria e
+              planejamento de soluções.
+            </p3>Relatórios mensais</h3>
+            <p>
+              Acompanhamento técnico e avaliação
+              contínua </article>
+
+          <article class="card">
+           as técnicas</h3>
+            <p>
+              Padronização de preparações, ingredientes,
+              rendimento e processos.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </",
+    unsafe_allow_html=True,
+)
+
+# SEGMENT(
+    """
+    <section id="segmentos">
+      <div class="container">
+        <h2>Quem atendemos</h2>
+
+        <div class="grid">
+          <div class="card segmento">🍽️<p>Restaurantes</p></div>
+          < segmento">🥪<p>Lanchonetes</p="card segmento">🥖<p>Padarias</p></div>
+          <div class="card segmento">🍔<p>Hamburguerias</p></div>
+          <div class="card segmento">🚚<p>Food Trucks</p></div>
+          <div class="card segmento">🛒<p>Mercados</p></div>
+          <div class<p>Creches</p></div>
+          class="card segmento">🏪<p>Mercearias</p></div>
+        </div>
+    unsafe_allow_html=True,
+)
+
+# CONTATO (TEXTO SUPERIOR)
+st.markdown(
+    """
+    <section id="contato">
+      <div class="container">
+
+        <div class="destaque">
+          <h2>Vamos encontrar a solução para sua empresa?</h2>
+
+          <p>
+            Entre em
+            do seu estabelecimento.
+          </p>
+
+          <a class="btn"
+             href="wa.me/5561999277063"
+             target="_blank">
+             WhatsApp: (61) 99927-7063 <h2>Solicite seu orçamento</h2>
+
         <p>
-            Responsabilidade Técnica • Consultoria UAN •
-            Boas Práticas • Segurança dos Alimentos
+          Preencha os dados abaixo. Sua solicitação será
+          preparada para envio pelo WhatsApp.
         </p>
-    </div>
+
+         </section>
     """,
-    unsafe_allow_html=True)
-# ==========================================================
-# CONTATO E WHATSAPP
-# ==========================================================
-st.markdown("""
-<div class="cta">
-    <h2>📲 Fale agora com uma Especialista</h2>
-    <p>Agende uma avaliação do seu estabelecimento.</p>
-    <p><strong>📞 Telefone/WhatsApp: (61) 99927-7063</strong></p>
-    <a
-        class="whatsapp"
-        href="https://wa.me/5561999277063"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        💬 Chamar no WhatsApp
+    unsafe_allow_html=True,
+)
+
+# FORMULÁRIO (Streamlit)
+st.markdown('<div class="container">', unsafe_allow_html=True)
+
+with st.form("form_orcamento"):
+    nome =.text_input("Seu nome *")
+    empresa = st.text_input("Nome do estabelecimento")
+    telefone = st.text_input("Seu telefone *")
+    segmento = st.selectbox(
+        "Segmento *",
+        [
+            "",
+            "Restaurante",
+            "Lanchonete",
+            "Padaria",
+            "Hamburgueria",
+            "Food Truck",
+            "Mercado",
+            "Confeitaria",
+            "Cafeteria",
+            "Creche            "Outro",
+        ],
+        index=0,
+    )
+    mensagem = st.text_area("Conte como podemos ajudar",")
+
+st.markdown("</div>", unsafe_allow_html=True not nome or not telefone or not segmento:
+        st.error("Preencha nome, telefone e segmento.")
+    else:
+        texto = "\n".join(
+Olá! Gostaria de solicitar um orçamento da GM Consultoria Alimentar.",
+                "",
+                f"Nome                f"Estabelecimento: {empresa}",
+                f"Telefone: {telefone}",
+                f"Segmento: {segmento}",
+                f"Solicitação: {mensagem}",
+            ]
+        )
+        url = "https://wa.me/5561999277063?text=" + urllib.parse.quote(texto)
+        st.success("Clique no botão abaixo para abrir o WhatsApp:")
+        st.markdown(
+            f'<a class="btn btn-dark target="_blank">'
+            "Abrir conversa no WhatsApp</a>",
+            CONSULTORIA ALIMENTAR</h3>
+      <p>Especialistas em </footer>
+
+    <a class="whatsapp-float"
+       href="https://wa.me/5561999277063"
+       target="_blank">
+       WhatsApp
     </a>
-</div>
-""", unsafe_allow_html=True)
-# ==========================================================
-# RODAPÉ
-# ==========================================================
-st.markdown(
-    """
-    <div class="footer">
-        <p><strong>GM Consultoria Alimentar</strong></p>
-        <p>
-            Nutricionista RT | Consultoria em Unidade de Alimentação
-            e Nutrição (UAN)
-        </p>
-        <p>© 2026 — Todos os direitos reservados.</p>
-    </div>
     """,
-    unsafe_allow_html=True)
+    unsafe_allow_html=True,
+)
