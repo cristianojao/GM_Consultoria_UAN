@@ -1,259 +1,329 @@
 import urllib.parse
 import streamlit as st
 
-# CONFIGURAÇÃO .stApp {
-        background: #f5faf 16px;
-        box-shadow: 0 2px 12px #        display: flex;
+# ============================================================
+# GM CONSULTORIA ALIMENTAR - SITE INSTITUCIONAL
+# Execute com: streamlit run app.py
+# ============================================================
+
+st.set_page_config(
+    page_title="GM Consultoria Alimentar",
+    page_icon="🥗",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
+
+WHATSAPP_NUMBER = "5561999277063"
+
+# CSS do novo layout
+st.markdown(
+    """
+    <style>
+      :root {
+        --verde: #0d6b5b;
+        --verde-escuro: #084b40;
+        --verde-claro: #eaf5f0;
+        --lima: #c8df75;
+        --texto: #263b35;
+        --cinza: #60716b;
+        --branco: #ffffff;
+      }
+
+      html { scroll-behavior: smooth; }
+      .stApp {
+        background: #f5faf7;
+        color: var(--texto);
+      }
+      [data-testid="stHeader"] { background: rgba(245,250,247,.92); }
+      [data-testid="stToolbar"] { right: 1rem; }
+      .block-container {
+        max-width: 1160px;
+        padding-top: 1.2rem;
+        padding-bottom: 2rem;
+      }
+      #MainMenu, footer { visibility: hidden; }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
+        gap: 18px;
+        padding: 14px 20px;
+        margin-bottom: 22px;
+        background: rgba(255,255,255,.97);
+        border: 1px solid #e2eee8;
+        border-radius: 16px;
+        box-shadow: 0 5px 20px rgba(8,75,64,.08);
       }
-
       .logo-text {
-        font-size: 22px;
-        font-weight: 800;
         color: var(--verde);
+        font-size: 21px;
+        font-weight: 800;
+        line-height: 1.2;
       }
-
       .logo-sub {
-        font-size: 13px: #53665e;
+        color: var(--cinza);
+        font-size: 12px;
+        margin-top: 4px;
       }
-
-      /* Menu fixo (logo + nav) */
       .site-nav {
         display: flex;
-        gap: 18px;
-        background: var(--verde-escuro);
-        padding: 10px 18px;
-        border-radius: 999px;
-        box 10px #0002;
-        white-space: nowrap: white;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+      .site-nav a {
+        color: var(--verde-escuro);
         text-decoration: none;
-        font }
-
+        font-size: 13px;
+        font-weight: 700;
+        padding: 9px 12px;
+        border-radius: 30px;
+      }
       .site-nav a:hover {
-        color: var(--lima);
-      }
-
-     36px 10px;
-      }
-
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
-      .hero {
-        background: white;
-        border-radius: 14px;
-        padding: 26px 28px;
-        box-shadow: 0 4px 16px #0001;
-        margin 16px;
-      }
-
-      .hero-content {
-        display: grid;
-        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-        gap: 24px;
-        align-items: center;
-      }
-
-      .hero img {
-        width: 100%;
-        border-radius: 14px;
-        object-fit: cover;
-      }
-
-      h1, h2, h3 {
+        background: var(--verde-claro);
         color: var(--verde);
       }
 
-      h1 {
-        font-size: clamp(26px, 5vw, 40px);
-        margin-bottom: 10px;
+      section { scroll-margin-top: 105px; }
+      .hero {
+        overflow: hidden;
+        background: linear-gradient(120deg, #ffffff 0%, #eaf5f0 100%);
+        border: 1px solid #e1eee7;
+        border-radius: 22px;
+        padding: 34px;
+        margin-bottom: 22px;
+        box-shadow: 0 8px 28px rgba(8,75,64,.07);
       }
-
-      h2 {
-        font-size: 24px;
- filter: brightness(1.05);
+      .eyebrow {
+        color: var(--verde);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
       }
-
-             background: white;
-        border-radius: 14px;
-        padding: 26px 22px;
-        box-shadow: 0 4px 16px #0001;
-        margin: 16px;
+      .hero h1 {
+        color: var(--verde-escuro);
+        font-size: clamp(30px, 4.5vw, 48px);
+        line-height: 1.12;
+        margin: 0 0 15px 0;
       }
+      .hero p {
+        color: #52665e;
+        font-size: 17px;
+        line-height: 1.7;
+        max-width: 620px;
+      }
+      .hero-image {
+        width: 100%;
+        min-height: 270px;
+        max-height: 340px;
+        object-fit: cover;
+        border-radius: 17px;
+      }
+      .btn {
+        display: inline-block;
+        background: var(--verde);
+        color: #fff !important;
+        text-decoration: none !important;
+        font-weight: 800;
+        padding: 13px 19px;
+        border-radius: 30px;
+        margin-top: 12px;
+        box-shadow: 0 5px 14px rgba(13,107,91,.2);
+      }
+      .btn:hover { background: var(--verde-escuro); }
 
-      .destaque {
+      .content-card {
+        background: #fff;
+        border: 1px solid #e4eee9;
+        border-radius: 19px;
+        padding: 27px;
+        margin: 18px 0;
+        box-shadow: 0 5px 20px rgba(8,75,64,.045);
+      }
+      .section-kicker {
+        color: #789087;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      .section-title {
+        color: var(--verde-escuro);
+        font-size: 27px;
+        font-weight: 800;
+        margin: 0 0 13px 0;
+      }
+      .section-copy {
+        color: #52665e;
+        line-height: 1.75;
+        font-size: 15px;
+      }
+      .highlight {
         background: var(--verde-claro);
-        padding: 18px 18px 16px;
-        border-radius: 14px;
-        margin-top: 16px;
+        border-left: 4px solid var(--verde);
+        padding: 17px 19px;
+        border-radius: 10px;
+        margin-top: 18px;
+        color: #35564b;
+        line-height: 1.65;
       }
 
-      .grid {
+      .service-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1));
-        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
         margin-top: 18px;
       }
-
-      .card {
-        background: var(--verde-claro);
-        padding: 18px;
+      .service-card {
+        background: #f6fbf8;
+        border: 1px solid #e2eee8;
         border-radius: 15px;
+        padding: 20px;
+        min-height: 175px;
       }
-
-      .card.segmento {
+      .service-icon { font-size: 29px; margin-bottom: 10px; }
+      .service-card h3 {
+        color: var(--verde-escuro);
+        font-size: 17px;
+        margin: 0 0 8px 0;
+      }
+      .service-card p {
+        color: #60716b;
+        font-size: 13px;
+        line-height: 1.6;
+        margin: 0;
+      }
+      .segment-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .segment-card {
         text-align: center;
-        font-size: 18px;
+        background: var(--verde-claro);
+        border: 1px solid #dcece4;
+        padding: 18px 10px;
+        border-radius: 14px;
+        color: var(--verde-escuro);
+        font-weight: 750;
       }
-
-      .emoji {
-        font-size: 28px;
-        margin-bottompx;
+      .segment-card span {
+        display: block;
+        font-size: 27px;
+        margin-bottom: 7px;
       }
-
       .site-footer {
         text-align: center;
-        color: #53665e;
-        padding: 28px 10px 34px;
-        font-size: 14px;
+        color: #6c8077;
+        font-size: 12px;
+        padding: 25px 10px 12px;
       }
-
-      /* Botão flutuante do WhatsApp */
       .whatsapp-float {
-        position: 18px;
-        bottom: 18px;
-        background: #25d366;
-        color: white !important;
-        border-radius: 40px;
-       px 16px;
-        font-weight: 6000 3px 10px #0003;
-        display: flex;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1000;
+        display: inline-flex;
         align-items: center;
         gap: 8px;
-        z-index: 200;
+        padding: 13px 17px;
+        border-radius: 40px;
+        background: #25d366;
+        color: #fff !important;
+        text-decoration: none !important;
         font-size: 14px;
+        font-weight: 800;
+        box-shadow: 0 5px 18px rgba(0,0,0,.2);
       }
 
-      .whatsapp-float:hover {
-        filter: brightness(1.07);
+      /* Formulário Streamlit */
+      [data-testid="stForm"] {
+        background: #fff;
+        border: 1px solid #e2eee8;
+        border-radius: 16px;
+        padding: 20px;
+      }
+      div[data-testid="stFormSubmitButton"] button {
+        background: var(--verde);
+        color: white;
+        border: 0;
+        border-radius: 30px;
+        font-weight: 800;
+        min-height: 45px;
+      }
+      div[data-testid="stFormSubmitButton"] button:hover {
+        background: var(--verde-escuro);
+        color: white;
       }
 
-      .whats-icon {
-        font-size: 18px;
-      }
-
-      @media (max-width: 768px) {
-        .hero-content {
-          grid-template-columns: 1fr;
-        }
-
-                 flex-direction: column;
+      @media (max-width: 760px) {
+        .block-container { padding: 0.7rem 0.8rem 1.5rem; }
+        .site-header {
+          position: relative;
           align-items: flex-start;
-          gap: 8px;
+          flex-direction: column;
+          padding: 14px;
         }
-
-        .site-nav {
-          width: 100%;
-          justify-content: space-between;
-          overflow-x: auto;
-        }
+        .site-nav { justify-content: flex-start; gap: 3px; }
+        .site-nav a { padding: 8px 9px; font-size: 12px; }
+        .hero { padding: 22px 18px; }
+        .content-card { padding: 21px 17px; }
+        .hero-image { min-height: 190px; }
+        .whatsapp-float { right: 12px; bottom: 12px; }
       }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
- CABEÇALHO + MENU
+# Cabeçalho e navegação
 st.markdown(
-   -header-wrap">
-      <header class="site-header">
+    """
+    <header class="site-header">
+      <div>
+        <div class="logo-text">GM Consultoria Alimentar</div>
+        <div class="logo-sub">Gestão • Qualidade • Segurança Alimentar</div>
+      </div>
+      <nav class="site-nav">
+        <a href="#inicio">Início</a>
+        <a href="#empresa">Quem somos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#segmentos">Segmentos</a>
+        <a href="#contato">Orçamento</a>
+      </nav>
+    </header>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Início / apresentação
+st.markdown(
+    f"""
+    <section id="inicio" class="hero">
+      <div class="eyebrow">Consultoria • Assessoria • Responsabilidade técnica</div>
+      <div class="hero-content">
         <div>
-          <div class="logo-text">GM Consultoria Alimentar</div>
-          <div class="logo-sub">Especialistas em segurança alimentar</div>
-        </div>
-        <nav class="site-nav">
-          <a href="#inicio">Início</a>
-          <a href="#empresa">Quem somos</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#segmentos">Segmentos</a>
-          <a href="#contato">Orçamento</a>
-        </nav>
-      </header>
-    </ INÍCIO (HERO)
-st.markdown(
-section id="inicio">
-      <div class="container">
-        <div class="hero">
-          <div class="hero-content">
-            <div>
-              <h1>Seu negócio mais seguro!</h1>
-              <p>
-                Consultoria e assessoria especializada em segurança
-                dos alimentos para sua empresa.
-              </p>
-              <a class="btn"
-                 href="https://wa.me/5561999277063"
-                 target="_blank"
-                 rel="noopener">
-                 Fale conosco pelo WhatsApp
-              </a>
-            </div>
-            <div>
-              <!-- Troque o src abaixo pelo caminho correto da sua imagem -->
-              < src="https://via.placeholder.com/800x400?text=Banner+GM+Consultoria"
-                   alt="GM Consultoria Alimentar - banner">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    """,
-    unsafe_allow_html=True,
-)
-
-# EMPRESA
-st.markdown(
-    """
-    <section id="empresa">
-      <div class="container">
-        <div class="content-card">
-          <h2>Quem somos</h2>
-
-          <img
-           600?text=Banner+Vertical+GM"
-            alt="Serviços da GM Consultoria Alimentar"
-            style="
-              width: 100%;
-              max-width: 450px;
-              display: block;
-              margin: 18px auto;
-              border-radius: 18px;
-            "
-          >
-
+          <h1>Seu negócio mais seguro. Sua gestão mais eficiente.</h1>
           <p>
-            A GM Consultoria Alimentar é especializada em consultoria
-            e assessoria para estabelecimentos do setor alimentício.
+            Consultoria especializada em segurança dos alimentos para
+            restaurantes, lanchonetes, padarias e empresas do setor alimentício.
+            Mais qualidade, organização e tranquilidade para o seu negócio.
           </p>
-
-          <p>
-            Nosso trabalho busca garantir segurança dos alimentos,
-            organização, padronização dos processos e conformidade
-            com a legislação sanitária aplicável.
-          </p>
-
-          <div class="destaque">
-3>Nosso propósito</h3>
-            <p>
-              Cuidar da segurança dos alimentos e da conformidade
-              do seu estabelecimento, para que você possa focar
-              no crescimento do seu negócio.
-            </p>
-          </div>
+          <a class="btn" href="https://wa.me/{WHATSAPP_NUMBER}" target="_blank"
+             rel="noopener noreferrer">Fale conosco pelo WhatsApp</a>
+        </div>
+        <div style="margin-top:18px">
+          <img class="hero-image"
+            src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1100&q=85"
+            alt="Cozinha profissional organizada e preparada para manipulação de alimentos">
         </div>
       </div>
     </section>
@@ -261,110 +331,129 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# SERVIÇOS
+# Quem somos
 st.markdown(
     """
-    <section id="servicos">
-      <div class="container">
-        <div class-card          <h2>Nossos serviços</h2>
-
-          <div class="grid">
-            <article class="card">
-             ">🛡️</div>
-              <h3>Segurança dos alimentos e RT</h3>
-              <p>
-                Responsabilidade técnica e orientação para
-                alimentos seguros e conformidade sanitária.
-              </p>
-            </article>
-
-            <article class="card">
-              <div class="emoji">📋</div>
-              <h3>MBP, POPs e BPF</h3>
-              <p>
-                Elaboração, implantação e acompanhamento
-                de documentos e boas práticas.
-              </p>
-            </article>
-
-            <article class="card">
-              <div class="emoji">👩‍🍳</div>
-              <h3>Treinamento de equipe</h3>
-              <p>
-                Capacitação da equipe com foco na prática
-                e na segurança dos alimentos.
-              </p>
-            </article>
-
-            <article class="card">
-              <div class="emoji">📈</div>
-             iva
-                                      <article="">
-             div classemoji"></div              <h3 licença sanitária</h3>
-              <p>
-                Orientação e suporte durante o processo
-                de regularização sanitária.
-              </p>
-            </article>
-
-            <article class="card">
-              <div class="emoji">🔎</div>
-              <h3>Diagnóstico e plano de ação</h3>
-              <p>
-                Identificação de oportunidades de melhoria e
-                planejamento de soluções.
-              </p>
-            </article>
-
-            <article class="card">
-              <div class="emoji">📊</div>
-              <h3>Relatórios mensais</h3>
-              <p>
-                Acompanhamento técnico e avaliação
-                contínua dos processos.
-              </p>
-            </article>
-
-            <article class="card">
-              <div class="emoji">🍽️</div>
-              <h3>Fichas técnicas</h3>
-              <p>
-                Padronização de prepar,,
-                rendimento e processos.
-              </p>
-            </article>
-          </div>
-        </div>
+    <section id="empresa" class="content-card">
+      <div class="section-kicker">Conheça a GM</div>
+      <h2 class="section-title">Quem somos</h2>
+      <p class="section-copy">
+        A <strong>GM Consultoria Alimentar</strong> é especializada em
+        consultoria e assessoria para estabelecimentos do setor alimentício.
+        Atuamos para fortalecer a segurança dos alimentos, a organização,
+        a padronização dos processos e a conformidade com a legislação
+        sanitária aplicável.
+      </p>
+      <p class="section-copy">
+        Nosso trabalho é direcionado à realidade de cada estabelecimento,
+        com orientação técnica, acompanhamento e soluções práticas para
+        melhorar a rotina e os resultados da operação.
+      </p>
+      <div class="highlight">
+        <strong>Nosso propósito</strong><br>
+        Cuidar da segurança dos alimentos e da conformidade do seu
+        estabelecimento, para que você possa focar no crescimento do seu negócio.
       </div>
     </section>
     """,
     unsafe_allow_html=True,
 )
 
-# SEGMENTOS
+# Serviços
 st.markdown(
     """
-    <section id="segmentos">
-      <div class="container">
-        <div class="content-card">
-          <h2>Quem atendemos</h2>
-
-          <div class="grid">
-            <div class="card segmento">🍽️<p>Restaurantes</p></div>
-            <div class="card segmento">p>Lanchonetes</p></div>
-            <div class="card segmento">>
-            <div class="card segmento">🍔<p>Hamburguerias</p></div>
-            <div class="card segmento">🚚<p>Food Trucks</p></div>
-            <div class="card segmento">🛒<p>Merc <div class="card segmento">🧸<p>div class="card segmento">🏪<p>Mercearias <div class="content-card">
-          <h2>Vamos encontrar a solução para sua empresa?</ em contato pelo WhatsApp ou preencha os dados
-            abaixo. Sua solicitação será preparada para envio
-            direto WhatsApp.
-          </p>
-        </div>
+    <section id="servicos" class="content-card">
+      <div class="section-kicker">Como podemos ajudar</div>
+      <h2 class="section-title">Nossos serviços</h2>
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>Segurança dos alimentos e RT</h3>
+          <p>Responsabilidade técnica e orientação para alimentos seguros e conformidade sanitária.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>MBP, POPs e BPF</h3>
+          <p>Elaboração, implantação e acompanhamento de documentos e boas práticas.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">👩‍🍳</div>
+          <h3>Treinamento de equipe</h3>
+          <p>Capacitação dos manipuladores com foco na prática e na segurança dos alimentos.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">📑</div>
+          <h3>Licença sanitária</h3>
+          <p>Orientação e suporte durante o processo de regularização sanitária.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">🔎</div>
+          <h3>Diagnóstico e plano de ação</h3>
+          <p>Identificação de oportunidades de melhoria e planejamento de soluções.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>Relatórios e acompanhamento</h3>
+          <p>Acompanhamento técnico e avaliação contínua dos processos.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">🍽️</div>
+          <h3>Fichas técnicas</h3>
+          <p>Padronização de preparações, ingredientes, rendimento e processos.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">📉</div>
+          <h3>Controle de desperdícios</h3>
+          <p>Apoio na identificação de perdas e oportunidades de melhoria operacional.</p>
+        </article>
       </div>
     </section>
     """,
-       telefone = st.text_input("Seu telefone *")
+    unsafe_allow_html=True,
+)
+
+# Segmentos atendidos
+st.markdown(
+    """
+    <section id="segmentos" class="content-card">
+      <div class="section-kicker">Soluções para o seu ramo</div>
+      <h2 class="section-title">Quem atendemos</h2>
+      <div class="segment-grid">
+        <div class="segment-card"><span>🍽️</span>Restaurantes</div>
+        <div class="segment-card"><span>🥪</span>Lanchonetes</div>
+        <div class="segment-card"><span>🍞</span>Padarias</div>
+        <div class="segment-card"><span>🍔</span>Hamburguerias</div>
+        <div class="segment-card"><span>🚚</span>Food trucks</div>
+        <div class="segment-card"><span>🛒</span>Mercados</div>
+        <div class="segment-card"><span>🧁</span>Confeitarias</div>
+        <div class="segment-card"><span>☕</span>Cafeterias</div>
+        <div class="segment-card"><span>🏫</span>Escolas e creches</div>
+        <div class="segment-card"><span>🏨</span>Hotéis e cozinhas</div>
+      </div>
+    </section>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Contato e orçamento
+st.markdown(
+    """
+    <section id="contato" class="content-card">
+      <div class="section-kicker">Vamos conversar?</div>
+      <h2 class="section-title">Solicite um orçamento</h2>
+      <p class="section-copy">
+        Conte um pouco sobre sua empresa. Ao enviar, o WhatsApp será aberto
+        com a solicitação preenchida para você revisar e encaminhar.
+      </p>
+    </section>
+    """,
+    unsafe_allow_html=True,
+)
+
+with st.form("form_orcamento", clear_on_submit=False):
+    nome = st.text_input("Seu nome *", placeholder="Digite seu nome")
+    empresa = st.text_input("Nome do estabelecimento", placeholder="Nome da empresa (opcional)")
+    telefone = st.text_input("Seu telefone *", placeholder="(61) 99999-9999")
     segmento = st.selectbox(
         "Segmento *",
         [
@@ -377,30 +466,54 @@ st.markdown(
             "Mercado",
             "Confeitaria",
             "Cafeteria",
-            "Creche",
+            "Escola ou creche",
+            "Hotel ou cozinha industrial",
             "Outro",
         ],
         index=0,
     )
-    mensagem = st.text_area("Conte como podemos ajudar")
-    enviar = st.form_submit_button("Preparar solicitação no WhatsApp")
+    mensagem = st.text_area(
+        "Como podemos ajudar?",
+        placeholder="Descreva brevemente sua necessidade...",
+        height=110,
+    )
+    enviar = st.form_submit_button("Preparar solicitação no WhatsApp", use_container_width=True)
 
-st.markdown("</div>", unsafe_allow_html=True:
+if enviar:
     if not nome.strip() or not telefone.strip() or not segmento:
-        nome, telefone e segmento.")
+        st.error("Preencha os campos obrigatórios: nome, telefone e segmento.")
     else:
-        textoaria de solicitar um orçamento da GM Consultoria Alimentar.",
+        texto = "\n".join(
+            [
+                "Olá! Gostaria de solicitar um orçamento da GM Consultoria Alimentar.",
                 "",
-                f"Nome: {nomeEstabelecimento: {empresa.strip() or 'Não informado'}",
+                f"Nome: {nome.strip()}",
+                f"Estabelecimento: {empresa.strip() or 'Não informado'}",
                 f"Telefone: {telefone.strip()}",
-                f"Segmento}",
+                f"Segmento: {segmento}",
                 f"Solicitação: {mensagem.strip() or 'Não informado'}",
             ]
         )
-        url = "https://wa.me/7063?text=" + urllib.parse.quote(texto)
-        st.success("Clique abaixo para abrir o WhatsApp:")
+        url = f"https://wa.me/{WHATSAPP_NUMBER}?text={urllib.parse.quote(texto)}"
+        st.success("Solicitação preparada. Clique no botão abaixo para abrir o WhatsApp.")
         st.markdown(
-            f'<a class="btn" href="{url}" target_allow_html=True,
+            f'<a class="btn" href="{url}" target="_blank" rel="noopener noreferrer">'
+            'Abrir WhatsApp e enviar solicitação</a>',
+            unsafe_allow_html=True,
         )
 
-# RODAPÉ
+# Rodapé e botão flutuante
+st.markdown(
+    f"""
+    <div class="site-footer">
+      <strong>GM Consultoria Alimentar</strong><br>
+      Gestão • Qualidade • Segurança Alimentar<br>
+      Atendimento mediante agendamento.
+    </div>
+    <a class="whatsapp-float" href="https://wa.me/{WHATSAPP_NUMBER}"
+       target="_blank" rel="noopener noreferrer">
+       <span>●</span> WhatsApp
+    </a>
+    """,
+    unsafe_allow_html=True,
+)
