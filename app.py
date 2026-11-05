@@ -476,7 +476,7 @@ with st.form("form_orcamento", clear_on_submit=False):
         placeholder="Descreva brevemente sua necessidade...",
         height=110,
     )
-    enviar = st.form_submit_button("Preparar solicitação no WhatsApp", use_container_width=True)
+    enviar = st.form_submit_button("Enviar solicitação no WhatsApp", use_container_width=True)
 
 if enviar:
     if not nome.strip() or not telefone.strip() or not segmento:
