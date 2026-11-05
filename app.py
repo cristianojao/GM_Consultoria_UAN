@@ -289,6 +289,7 @@ st.markdown(
 st.markdown(
     """
     <header class="site-header">
+
     
       <div>
         <div class="logo-text">GM Consultoria Alimentar</div>
